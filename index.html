@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist</title>
+    <link rel="stylesheet" href="./common.css">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/f3d8ce7b90.css" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="Wrap">
+        <header>
+            <div class="leftbar">
+                <span class="user"></span>
+            </div>
+            <div class="rightbar">
+                <span class="time"></span>
+            </div>
+        </header>
+
+        <div id="loginBox">
+            <div class="popupHeader">
+                <div class="leftSide">
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+            </div>
+
+            <div class="loginCont">
+                <h5>Welcom ! <br> Please enter your name and login.</h5>
+                <form id="loginForm">
+                    <input type="text" placeholder="enter your name :-)" />
+                    <button class="loginBtn">login</button>
+                </form>
+            </div>
+        </div>
+        <div id="loginBg"></div>
+
+
+
+        <div id="todoList">
+            <div class="popupHeader">
+                <div class="leftSide">
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+                <div class="rightSide"></div>
+            </div>
+            <div class="todoCont">
+                <aside>
+                    <div>
+                        <span><i class="fa-solid fa-list-ul"></i>todo list</span>
+                    </div>
+                </aside>
+
+                <section>
+                    <h2 class="greeting"></h2>
+
+                    <form>
+                        <div class="addInput">
+                            <button class="addBtn">+</button>
+                            <input type="text" placeholder="add your task ..." />
+                        </div>
+                    </form>
+
+                    <div class="listTitle">
+                        <strong>my task</strong>
+                        <button class="deleteBtn"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
+
+                    <ul class="addList">
+
+                    </ul>
+
+                </section>
+
+            </div>
+        </div>
+
+        <div id="weather">
+            <div class="popupHeader">
+                <div class="leftSide">
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+            </div>
+
+            <div class="weatherCont">
+                <strong class="city">loading...</strong>
+                <strong class="tmp"></strong>
+                <div>
+                    <span class="maxTmp"></span>
+                    <span class="minTmp"></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="dDay">
+            <div class="popupHeader">
+                <div class="leftSide">
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+            </div>
+
+            <div class="dDayCont">
+                <div class="dInput">
+                    <form id="dDayForm">
+                        <input type="text" class='titleInput' placeholder="d-day name">
+                        <input type="date" class='dayInput' placeholder="d-day">
+                        <button class="dDayBtn"> + </button>
+                    </form>
+                </div>
+                <div class="dList">
+                </div>
+            </div>
+        </div>
+
+    <script src="https://kit.fontawesome.com/f3d8ce7b90.js" crossorigin="anonymous"></script>
+    <script src="./common.js"></script>
+</body>
+
+</html>
