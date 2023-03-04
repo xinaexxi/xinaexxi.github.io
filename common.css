@@ -1,0 +1,427 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* { margin: 0; padding: 0; transition: 0.5s;}
+ul, li, ol ,dl { list-style: none }
+a { text-decoration: none ; cursor: pointer}
+button {border: none; background: none ;cursor: pointer;}
+input { border: none; background-color: transparent;}
+body { 
+    font-family: 'Pretendard-Regular' , serif ;
+    color: #444;
+    position: relative;
+    /* background-image: url(./img/bg5.jpg); */
+    background-repeat : no-repeat;
+    background-size : cover;
+}
+
+/* 
+common
+*/
+.hidden {
+    display: none;
+}
+/* popup header  */
+.popupHeader {
+    width: 100%;
+    height: 30px;
+    background-color: rgb(200, 200, 200);
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+.popupHeader .leftSide {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 55px;
+    height: 100%;
+    margin-left: 15px;
+
+}
+.popupHeader .leftSide button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: tomato;
+}
+.leftSide button:nth-child(2) { background-color: rgb(242, 200, 15) ;}
+.leftSide button:nth-child(3) { background-color: green ;}
+
+
+#Wrap {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/*
+ header
+ */
+ header {
+    width: 100%;
+    height: 25px;
+    background: #ffffffb2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+ }
+ header .leftbar{
+    margin-left: 30px;
+    cursor: pointer;;
+ }
+ header .rightbar{
+    margin-right: 30px;
+ }
+ header .time{
+    font-size: 14px;
+    font-weight: 800;
+ }
+/* 
+login 
+*/
+#loginBox {
+    width: 350px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: #f2f2f2;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.loginCont {
+    width: 100%;
+    margin-top: 40px;
+}
+.loginCont h5 {
+    font-size: 16px;
+    text-align: center;
+}
+#loginForm {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+#loginForm input {
+    width: 230px;
+    height: 30px;
+    text-indent: 10px;
+    border-radius: 5px;
+}
+#loginForm button {
+    width: 50px;
+    height: 30px;
+    margin-right: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+#loginBg {
+    width: 100vw;
+    height : calc( 100vh - 30px );
+    position: absolute;
+    z-index: 5;
+    backdrop-filter: blur(5px);
+}
+
+
+/* 
+todoList 
+*/
+#todoList {
+    position: absolute;
+    right: 30px;
+    top: 60px;
+    width: 20vw;
+    height: 50vh;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    transition: 0.5s;
+    box-shadow: 3px 3px 10px #3f3f3f4f;
+}
+#todoList.big {
+    width: 70vw;
+    height: 85vh;
+    transition: 0.5s;
+}
+
+
+.todoCont {
+    width: 100%;
+    height: calc( 100% - 30px);
+    display: flex;
+}
+.todoCont aside {
+    width: 150px;
+    height: 100%;
+    display: block;
+    border-radius: 0 0 0 20px;
+    background-color: #e3e3e3;
+    display: none;
+}
+#todoList.big .todoCont aside {
+    display: block;
+}
+.todoCont aside div {
+    padding-top: 50px;
+}
+.todoCont aside span {
+    padding: 0 8px;
+    font-size: 14px;
+}
+.todoCont aside span i {
+    margin-right: 5px;
+}
+
+.todoCont section {
+    width: 100%;
+    padding: 30px;
+    background-color: #f8f8f8;
+    opacity: 0.9;
+    border-radius: 0 0 20px 20px;
+}
+#todoList.big .todoCont section {
+    border-radius: 0 0 20px 0;
+
+}
+.todoCont section h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-style: italic;
+}
+#todoList.big .todoCont section h2 {
+    font-size: 24px;
+}
+
+.todoCont section .addInput  {
+    background-color: #8aabe987;
+    border-radius: 5px;
+}
+#todoList.big .todoCont section .addInput  {
+    height: 30px;
+    line-height: 30px;
+}
+.todoCont section input:focus {outline: none;}
+.todoCont section .addBtn {
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+}
+.todoCont section .listTitle {
+    margin-top: 20px;
+    font-size: 20px;
+}
+#todoList.big .todoCont section .listTitle {
+    margin-top: 40px;
+}
+.todoCont section .listTitle button {
+    float: right;
+    font-size: 12px;
+}
+.todoCont section .addList {
+    width: 100%;
+    max-height: 50%;
+    overflow: auto;
+    padding-left: 25px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+#todoList.big .todoCont section .addList {
+    max-height: 75%;
+}
+.todoCont section .addList li {
+    padding: 7px 0;
+    font-size: 14px;
+    color: #666;
+    position: relative;
+    cursor: pointer;
+
+}
+.todoCont section .addList li span {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    left: -15px;
+    top: 12px;
+    border-radius: 50%;
+    border: 1px solid #666;
+}
+.todoCont section .addList li.check {
+    text-decoration: line-through;
+}
+.todoCont section .addList li.check span {
+background-color: #555;
+}
+
+.todoCont section .addList li button {
+   width: 6px;
+   height: 6px;
+   float: right;
+   margin-right: 20px;
+   display: none;
+}
+.todoCont section .addList li button.show {
+   display: block;
+}
+
+
+
+/* 
+weather 
+*/
+#weather {
+    position: absolute;
+    left: 30px;
+    top: 60px;
+    width: 15vw;
+    height: 20vh;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    transition: 0.5s;
+    box-shadow: 3px 3px 10px #3f3f3f4f;
+}
+#weather .weatherCont {
+    width: 100%;
+    height: calc( 100% - 30px );
+    border-radius: 0 0 20px 20px;
+    background-color: #2c2c2c85;
+    color: #fff;
+    padding:10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#weather .weatherCont strong {
+    font-size: 14px;
+}
+#weather .weatherCont strong.tmp {
+    font-size: 30px;
+}
+#weather .weatherCont > div {
+    display: flex;
+    justify-content: space-between;
+}
+#weather .weatherCont div span {
+    font-size: 14px;
+}
+#weather .weatherCont div span:nth-child(1) {
+    margin-right: 5px;
+}
+
+
+
+/* 
+        d-day 
+*/
+#dDay {
+    position: absolute;
+    left: 30px;
+    top: 250px;
+    width: 15vw;
+    height: auto;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    transition: 0.5s;
+    box-shadow: 3px 3px 10px #3f3f3f4f;
+}
+#dDay.big {
+    width: 50vw;
+    height: auto;
+    /* min-height: 40vh; */
+}
+#dDay .dDayCont {
+    width: 100%;
+    max-height: 350px;
+    overflow: scroll;
+    border-radius: 0 0 20px 20px;
+    background-color: #f8f8f8df;
+}
+#dDay .dDayCont::-webkit-scrollbar {
+    display: none; /*스크롤바 숨기기*/
+}
+#dDay .dDayCont .dList {
+    padding: 20px;
+    box-sizing: border-box;
+}
+#dDay .dDayCont .dList p {
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+}
+#dDay.big .dDayCont .dList{
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+}
+#dDay .dDayCont .dList div {
+    background-color: rgba(180, 204, 227, 0.57);
+    border-radius: 15px;
+    padding: 10px 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    box-shadow: 3px 3px 5px #ababab4f;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#dDay.big .dDayCont .dList div{
+   width: 30%;
+   margin-right: 3%;
+}
+#dDay .dDayCont .dList div .deleteBtn{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    display: none;
+}
+#dDay .dDayCont .dList div:hover .deleteBtn{
+    display: block;
+}
+#dDay .dDayCont .dTitle {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+#dDay .dDayCont .dNum {
+    font-size: 20px;
+}
+
+
+
+#dDay .dDayCont .dInput {
+    display: none;
+}
+#dDay.big .dDayCont .dInput {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+#dDay.big .dDayCont .dInput form {
+    display: flex;
+    justify-content: space-around;
+}
+#dDay.big .dDayCont .dInput input {
+    background-color:rgba(237, 189, 213, 0.632);
+    border-radius: 5px;
+    width: 30%;
+    height: 30px;
+    text-indent: 10px;
+}
+#dDay.big .dDayCont .dInput input.dayInput {
+    width: 40%;
+}
+
+
